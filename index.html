@@ -1,0 +1,54 @@
+<html><head>
+  <title>DF CONNECTED Player Count</title>
+<meta property="og:title" content="DF classic Connected players:0">
+<meta property="og:description" content="(Last Updated: 02:10 AM UTC )">
+  <meta property="og:type" content="website">
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+	
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    #player-count {
+      font-size: 48px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Undertale: Don't Forget (Classic) Player Count</h1>
+  <div id="player-count">Loading...</div>
+  <script>// Function to fetch player count from the server
+
+    function fetchPlayerCount() {
+      return fetch('https://gamemakerserver.com/dynamic/status.php')
+        .then(response => response.text())
+        .then(data => {
+          // Parse the JSON data
+          const jsonData = JSON.parse(data);
+          const gameData = jsonData.status.find(node => node.games.some(game => game.title === 'Undertale: Don\'t Forget (Classic)'));
+          if (gameData) {
+            return gameData.games.find(game => game.title === 'Undertale: Don\'t Forget (Classic)').connected;
+          } else {
+            throw new Error('DF CONNECTED game data not found');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching player count:', error);
+          return '0';
+        });
+    }
+
+    // Fetch and display the player count
+fetchPlayerCount()
+.then(playerCount => {
+        document.getElementById('player-count').textContent = playerCount;
+      });
+  </script>
+
+</body></html>
