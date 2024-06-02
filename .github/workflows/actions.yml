@@ -1,8 +1,6 @@
 name: embeds updater
 
 on:
-  schedule:
-    - cron: '*/5 * * * *' # every 10 minutes
   workflow_dispatch:
 
 jobs:
