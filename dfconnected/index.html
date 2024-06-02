@@ -1,6 +1,6 @@
 <html><head>
   <title>DF CONNECTED Player Count</title>
-<meta property="og:title" content="DF classic Connected players:0">
+<meta property="og:title" content="DFC Connected players:109">
 <meta property="og:description" content="(Last Updated: 01:00 PM UTC )">
   <meta property="og:type" content="website">
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
@@ -21,7 +21,7 @@
   </style>
 </head>
 <body>
-  <h1>Undertale: Don't Forget (Classic) Player Count</h1>
+  <h1>DF CONNECTED (Undertale MMORPG) Player Count</h1>
   <div id="player-count">Loading...</div>
   <script>// Function to fetch player count from the server
 
@@ -31,9 +31,9 @@
         .then(data => {
           // Parse the JSON data
           const jsonData = JSON.parse(data);
-          const gameData = jsonData.status.find(node => node.games.some(game => game.title === 'Undertale: Don\'t Forget (Classic)'));
+          const gameData = jsonData.status.find(node => node.games.some(game => game.title === 'DF CONNECTED (Undertale MMORPG)'));
           if (gameData) {
-            return gameData.games.find(game => game.title === 'Undertale: Don\'t Forget (Classic)').connected;
+            return gameData.games.find(game => game.title === 'DF CONNECTED (Undertale MMORPG)').connected;
           } else {
             throw new Error('DF CONNECTED game data not found');
           }
