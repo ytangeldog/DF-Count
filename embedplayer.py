@@ -41,7 +41,7 @@ def fetch_player_count():
                 file.write(updated_html_content2)
             with open('stats/temp.txt', 'r') as file:
                 tempnum = file.read()
-            if tempnum < player_count:
+            if int(tempnum) < player_count:
                 with open('stats/temp.txt', 'w') as file:
                     file.write(player_count)
             return player_count
