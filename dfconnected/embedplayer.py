@@ -39,7 +39,11 @@ def fetch_player_count():
             # Write the updated content back to the index.html file
             with open('dfconnected/index.html', 'w') as file:
                 file.write(updated_html_content2)
-            
+            with open('dfconnected/stats/temp.txt', 'r') as file:
+                tempnum = file.read()
+            if int(tempnum) < player_count:
+                with open('dfconnected/stats/temp.txt', 'w') as file:
+                    file.write(f"{player_count}")
             return player_count
         else:
             raise Exception('DFC game data not found')
