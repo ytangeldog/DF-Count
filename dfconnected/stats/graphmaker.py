@@ -13,7 +13,7 @@ def create_graph(data):
     
     plt.figure(figsize=(10, 5))
     plt.plot(labels, last_seven_items, marker='o')
-    plt.title('Df classic players week stats')
+    plt.title('Df Connected players week stats')
     plt.xlabel('Days')
     plt.ylabel('Players')
     plt.grid(True)
