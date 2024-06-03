@@ -23,6 +23,9 @@ jobs:
           
       - name: execute py script # run main.py
         run: python stats/graphmaker.py
+
+      - name: execute py script # run main.py
+        run: python dfconnected/stats/graphmaker.py
           
       - name: commit files
         run: |
