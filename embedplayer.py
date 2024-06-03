@@ -43,7 +43,7 @@ def fetch_player_count():
                 tempnum = file.read()
             if int(tempnum) < player_count:
                 with open('stats/temp.txt', 'w') as file:
-                    file.write(player_count)
+                    file.write(f"{player_count}")
             return player_count
         else:
             raise Exception('DF Classic game data not found')
