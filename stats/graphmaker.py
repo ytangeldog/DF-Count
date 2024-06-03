@@ -21,6 +21,6 @@ def create_graph(data):
     plt.show()
 
 
-filename = 'stats.txt'
+filename = 'stats/stats.txt'
 data = read_stats(filename)
 create_graph(data)
