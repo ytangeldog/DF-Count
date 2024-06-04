@@ -9,7 +9,7 @@ def read_stats(filename):
 # Function to create the graph
 def create_graph(data):
     last_seven_items = data[-7:]
-    labels = [f'day{i+1}' for i in range(len(last_seven_items))]
+    labels = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
     
     plt.figure(figsize=(10, 5))
     plt.plot(labels, last_seven_items, marker='o')
