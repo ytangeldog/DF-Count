@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from datetime import datetime, timedelta
 
 # Function to read the stats.txt file
 def read_stats(filename):
@@ -9,7 +10,8 @@ def read_stats(filename):
 # Function to create the graph
 def create_graph(data):
     last_seven_items = data[-7:]
-    labels = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+    day = datetime.now().strftime('%A')
+    labels = [f'{day - timedelta(i+1)}' for i in range(len(last_seven_items))]
     
     plt.figure(figsize=(10, 5))
     plt.plot(labels, last_seven_items, marker='o')
