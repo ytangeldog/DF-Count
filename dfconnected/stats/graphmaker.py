@@ -15,6 +15,7 @@ def create_graph(data):
     
     plt.figure(figsize=(10, 5))
     plt.plot(labels, last_seven_items, marker='o')
+    plt.gca().yaxis.set_major_formatter('{x:.0f}')
     plt.title('Df Connected players week stats')
     plt.xlabel('Days')
     plt.ylabel('Players')
