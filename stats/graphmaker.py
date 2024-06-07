@@ -15,9 +15,8 @@ def create_graph(data):
     
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.plot(labels, last_seven_items, marker='o')
-    ax.yaxis.set_major_formatter('{x:.0f}')
     for i, value in enumerate(last_seven_items):
-        ax.text(labels[i], value, str(int(value)), ha='center', va='bottom', fontsize=10)
+        ax.text(labels[i], value, str(int(value)), ha='center', fontsize=15)
     ax.set_title('Df classic players week stats')
     ax.set_xlabel('Days')
     ax.set_ylabel('Players')
