@@ -17,7 +17,7 @@ def create_graph(data):
     ax.plot(labels, last_seven_items, marker='o')
     ax.yaxis.set_major_formatter('{x:.0f}')
     for i, value in enumerate(last_seven_items):
-        ax.annotate(str(int(value)), (labels[i], value), xytext=(0, 5), textcoords="offset points")
+        ax.text(labels[i], value, str(int(value)), ha='center', va='bottom', fontsize=10)
     ax.set_title('Df classic players week stats')
     ax.set_xlabel('Days')
     ax.set_ylabel('Players')
