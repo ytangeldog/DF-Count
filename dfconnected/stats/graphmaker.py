@@ -23,7 +23,7 @@ def create_graph(data):
     ax.set_ylabel('Players')
     ax.grid(True)
     
-    plt.savefig('graph.png')
+    plt.savefig('dfconnected/graph.png')
     plt.show()
 
 
