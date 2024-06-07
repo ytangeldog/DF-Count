@@ -15,10 +15,14 @@ def create_graph(data):
     
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.plot(labels, last_seven_items, marker='o')
-    ax.yaxis.set_major_formatter('{x:.0f}')
     for i, value in enumerate(last_seven_items):
-        ax.annotate(str(int(value)), (labels[i], value), xytext=(0, 5), textcoords="offset points")
-    ax.set_title('Df classic players week stats')
+        x = i
+        y = value
+        text = str(int(value))
+        bbox_props = dict(boxstyle="circle,pad=0.2", lw=0)
+        ax.text(x, y, text, ha="center", va="center", size=10,color='white',fontweight='bold',
+                bbox=bbox_props)
+    ax.set_title('Df Connected players week stats')
     ax.set_xlabel('Days')
     ax.set_ylabel('Players')
     ax.grid(True)
