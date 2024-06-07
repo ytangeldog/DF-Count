@@ -13,14 +13,17 @@ def create_graph(data):
     day = datetime.now()
     labels = [f'{(day + timedelta(i)).strftime('%A')}' for i in range(len(last_seven_items))]
     
-    plt.figure(figsize=(10, 5))
-    plt.plot(labels, last_seven_items, marker='o')
-    plt.gca().yaxis.set_major_formatter('{x:.0f}')
-    plt.title('Df Connected players week stats')
-    plt.xlabel('Days')
-    plt.ylabel('Players')
-    plt.grid(True)
-    plt.savefig('dfconnected/graph.png')
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(labels, last_seven_items, marker='o')
+    ax.yaxis.set_major_formatter('{x:.0f}')
+    for i, value in enumerate(last_seven_items):
+        ax.annotate(str(int(value)), (labels[i], value), xytext=(0, 5), textcoords="offset points")
+    ax.set_title('Df classic players week stats')
+    ax.set_xlabel('Days')
+    ax.set_ylabel('Players')
+    ax.grid(True)
+    
+    plt.savefig('graph.png')
     plt.show()
 
 
