@@ -13,7 +13,7 @@ def create_graph(data):
     day = datetime.now()
     labels = [f'{(day - timedelta(30-i)).strftime('%b')}\n{(day - timedelta(30-i)).strftime('%d')}th' for i in range(len(last_thirty_items))]
     
-    fig, ax = plt.subplots(figsize=(15, 5))
+    fig, ax = plt.subplots(figsize=(16, 7))
     ax.plot(labels, last_thirty_items, marker='o', markersize=12)
     for i, value in enumerate(last_thirty_items):
         x = i
