@@ -23,7 +23,10 @@ jobs:
           
       - name: execute py script # run main.py
         run: python stats/monthlymaker.py
-          
+
+      - name: execute py script # run main.py
+        run: python dfconnected/stats/monthlymaker.py
+        
       - name: commit files
         run: |
           git config --local user.email "action@github.com"
