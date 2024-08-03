@@ -1,9 +1,9 @@
 <html><head>
   <title>DF Classic Player Count</title>
 <meta property="og:title" content="DF classic Connected players:0">
-<meta property="og:description" content="(Last Updated: 08:45 PM UTC )">
+<meta property="og:description" content="(Last Updated: 08:15 PM UTC )">
   <meta property="og:type" content="website">
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	
   <style>
     /* Fonts */
@@ -20,7 +20,7 @@
       font-family: "Determination Mono", sans-serif;
       text-align: center;
       background: black;
-      font-color: white;
+      color: white;
       margin-top: 50px;
     }
     h1 {
@@ -34,8 +34,10 @@
   </style>
 </head>
 <body>
-  <h1>Undertale: Don't Forget (Classic) Player Count</h1>
-  <div id="player-count">Loading...</div>
+  <img src="assests/harlow.gif" style="width:150px;"><br>
+<img src="assets/dfclassic.png" style="width:600;">
+<div style="font-size: 48px;">player count</div>
+  <div id="player-count">0</div>
   <script>// Function to fetch player count from the server
 
     function fetchPlayerCount() {
@@ -63,5 +65,4 @@ fetchPlayerCount()
         document.getElementById('player-count').textContent = playerCount;
       });
   </script>
-
 </body></html>
