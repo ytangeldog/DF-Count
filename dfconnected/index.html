@@ -1,17 +1,30 @@
 <html><head>
   <title>DF CONNECTED Player Count</title>
-<meta property="og:title" content="DFC Connected players:105">
-<meta property="og:description" content="(Last Updated: 08:45 PM UTC )">
+<meta property="og:title" content="DFC Connected players:0">
+<meta property="og:description" content="(Last Updated: 08:15 PM UTC )">
   <meta property="og:type" content="website">
-  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	
   <style>
+    /* Fonts */
+    @font-face {
+      font-family: "Determination Mono";
+      src: url("/fonts/DeterminationSansWebRegular.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Monster Friend Fore";
+      src: url("/fonts/MonsterFriendFore.ttf") format("truetype");
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Determination Mono", sans-serif;
       text-align: center;
+      background: black;
+      color: white;
       margin-top: 50px;
     }
     h1 {
+      font-family: "Monster Friend Fore";
       margin-bottom: 30px;
     }
     #player-count {
@@ -21,8 +34,10 @@
   </style>
 </head>
 <body>
-  <h1>DF CONNECTED (Undertale MMORPG) Player Count</h1>
-  <div id="player-count">Loading...</div>
+  <img src="/assests/harlow.gif" style="width:150px;"><br>
+<img src="/assets/dfconnected.png" style="width:600;">
+<div style="font-size: 48px;">player count</div>
+  <div id="player-count">0</div>
   <script>// Function to fetch player count from the server
 
     function fetchPlayerCount() {
@@ -50,5 +65,4 @@ fetchPlayerCount()
         document.getElementById('player-count').textContent = playerCount;
       });
   </script>
-
 </body></html>
