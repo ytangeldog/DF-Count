@@ -47,7 +47,7 @@
           const jsonData = JSON.parse(data);
           const gameData = jsonData.status.find(node => node.games.some(game => game.title === 'DF CONNECTED (Undertale MMORPG)'));
           if (gameData) {
-            return gameData.games.find(game => game.title === 'DF CONNECTED (Undertale MMORPG)').connected;
+            return gameData.games.find(game => game.title === 'DF CONNECTED (Undertale MMORPG)').loggedIn;
           } else {
             throw new Error('DF CONNECTED game data not found');
           }
