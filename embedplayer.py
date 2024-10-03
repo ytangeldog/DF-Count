@@ -21,7 +21,7 @@ def fetch_player_count():
         
         if game_data:
             game = next(game for game in game_data['games'] if game['title'] == 'Undertale: Don\'t Forget (Classic)')
-            player_count = game['connected']
+            player_count = game['loggedIn']
             
             # Read the index.html file
             with open('index.html', 'r') as file:
