@@ -11,7 +11,7 @@ current_unix_timestamp = get_current_unix_timestamp()
 
 def fetch_player_count():
     try:
-        response = requests.get('https://gamemakerserver.com/dynamic/status.php')
+        response = requests.get('https://gms-status.shuttleapp.rs/')
         response.raise_for_status()
         data = response.text
         
