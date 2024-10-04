@@ -40,7 +40,7 @@
   <script>// Function to fetch player count from the server
 
     function fetchPlayerCount() {
-      return fetch('https://gamemakerserver.com/dynamic/status.php')
+      return fetch('https://gms-status.shuttleapp.rs/')
         .then(response => response.text())
         .then(data => {
           // Parse the JSON data
