@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Pull latest changes
-        run: git pull origin main --rebase
-
       - name: checkout repo content
         uses: actions/checkout@v4 # checkout the repository content to github runner
+
+      - name: Pull latest changes
+        run: git pull origin main --rebase
 
       - name: setup python
         uses: actions/setup-python@v5
