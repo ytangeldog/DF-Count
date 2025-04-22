@@ -11,7 +11,16 @@ current_unix_timestamp = get_current_unix_timestamp()
 
 def fetch_player_count():
     try:
-        response = requests.get('https://gms-status-tcr6.shuttle.app/')
+        websites = [
+        'https://gms-status-tcr6.shuttle.app/',
+        'https://gms-status.infinityfreeapp.com/',
+        'https://www.gamemakerserver.com/dynamic/status.php'
+    ]
+    try:
+        for url in websites:
+            response = requests.get(url)
+            if response.status == 200:
+                break
         response.raise_for_status()
         data = response.text
         
