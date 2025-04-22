@@ -10,8 +10,7 @@ def get_current_unix_timestamp():
 current_unix_timestamp = get_current_unix_timestamp()
 
 def fetch_player_count():
-    try:
-        websites = [
+    websites = [
         'https://gms-status-tcr6.shuttle.app/',
         'https://gms-status.infinityfreeapp.com/',
         'https://www.gamemakerserver.com/dynamic/status.php'
