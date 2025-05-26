@@ -18,7 +18,7 @@ def fetch_player_count():
     try:
         for url in websites:
             response = requests.get(url)
-            if response.status == 200:
+            if response.status_code == 200:
                 break
         response.raise_for_status()
         data = response.text
