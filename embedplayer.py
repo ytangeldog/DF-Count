@@ -29,7 +29,7 @@ def fetch_player_count():
     else:
         raise Exception("All URLs failed.")
 
-                
+    try:           
         data = response.text
         
         # Parse the JSON data
