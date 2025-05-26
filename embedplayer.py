@@ -15,12 +15,20 @@ def fetch_player_count():
         'https://gms-status.infinityfreeapp.com/',
         'https://www.gamemakerserver.com/dynamic/status.php'
     ]
-    try:
-        for url in websites:
-            response = requests.get(url)
-            if response.status_code == 200:
-                break
-        response.raise_for_status()
+    for url in websites:
+        try:
+            response = requests.get(url, timeout=5)
+            response.raise_for_status()
+            break  
+        except requests.exceptions.SSLError as ssl_err:
+            print(f"SSL error with {url}: {ssl_err}")
+            continue
+        except requests.exceptions.RequestException as req_err:
+            print(f"Request failed with {url}: {req_err}")
+            continue
+    else:
+        raise Exception("All URLs failed.")
+
                 
         data = response.text
         
